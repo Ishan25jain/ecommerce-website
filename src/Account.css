@@ -1,0 +1,578 @@
+.account-page {
+  background-color: #fff;
+  min-height: calc(100vh - 80px);
+  padding-bottom: 60px;
+}
+
+.account-breadcrumb {
+  padding: 20px 60px 0;
+  font-size: 16px;
+  color: #666;
+  text-align: center;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.account-breadcrumb a {
+  color: #444;
+  text-decoration: none;
+}
+
+.account-breadcrumb a:hover {
+  text-decoration: none;
+}
+
+.account-breadcrumb span {
+  color: #333;
+  font-weight: 500;
+}
+
+.account-welcome {
+  text-align: center;
+  background-color: #f7f7f7;
+  padding: 45px 20px;
+  font-size: 26px;
+  color: #222;
+  margin: 20px 0 50px;
+  font-family: 'Georgia', serif;
+}
+
+.account-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 80px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.account-sidebar {
+  display: flex;
+  flex-direction: column;
+}
+
+.account-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.account-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.account-nav-item--active {
+  font-weight: 600;
+}
+
+.account-nav-icon {
+  font-size: 15px;
+  width: 18px;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.account-divider-line {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 30px 0 16px;
+}
+
+.account-signout {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 14px;
+  color: #333;
+  text-decoration: underline;
+  cursor: pointer;
+  text-align: left;
+}
+
+.account-signout:hover {
+  color: #000;
+}
+
+.account-overview-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #1a1a1a;
+}
+
+.account-section-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #1a1a1a;
+}
+
+.account-details-text {
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.account-links {
+  display: flex;
+  gap: 50px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #ddd;
+}
+
+.account-links a {
+  font-size: 14px;
+  color: #222;
+  text-decoration: underline;
+}
+
+.account-links a:hover {
+  color: #000;
+}
+
+@media (max-width: 900px) {
+  .account-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 0 24px;
+  }
+
+  .account-breadcrumb {
+    padding: 20px 24px 0;
+  }
+
+  .account-welcome {
+    font-size: 20px;
+    padding: 30px 16px;
+  }
+}
+.account-section {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin-top: 16px;
+}
+
+.pd-page {
+  max-width: 100%;
+}
+
+.pd-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+}
+
+.pd-note {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.pd-field {
+  margin-bottom: 20px;
+}
+
+.pd-field label {
+  display: block;
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.pd-field input,
+.pd-field select {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  font-family: inherit;
+  background-color: #ffffffd9;
+  color: #333;
+  box-sizing: border-box;
+  height: 48px;
+  border-radius: 4px;
+}
+
+.pd-field input:focus,
+.pd-field select:focus {
+  outline: none;
+  border-color: #333;
+}
+
+.pd-mobile-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  height: 48px;
+  border-radius: 4px;
+}
+
+.pd-mobile-box:focus-within {
+  border-color: #333;
+}
+
+.pd-mobile-box span {
+  padding: 0 8px 0 16px;
+  font-size: 15px;
+  color: #333;
+}
+
+.pd-mobile-box input {
+  border: none;
+  background: transparent;
+  height: 100%;
+  flex: 1;
+  min-width: 0;
+  padding: 0 16px 0 4px;
+  font-size: 15px;
+  color: #333;
+  outline: none;
+}
+
+.pd-hint {
+  font-size: 13px;
+  color: #666;
+  margin-top: 10px;
+}
+
+.pd-hint a {
+  color: #6f84ad;
+  text-decoration: none;
+}
+
+.pd-password-box {
+  position: relative;
+}
+
+.pd-password-box input {
+  width: 100%;
+  padding: 13px 40px 13px 16px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  height: 48px;
+  box-sizing: border-box;
+}
+
+.pd-password-box span {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.pd-row {
+  display: flex;
+  gap: 60px;
+}
+
+.pd-row .pd-field {
+  flex: 1;
+}
+
+.pd-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 36px;
+}
+
+.pd-checkbox input {
+  margin-top: 4px;
+}
+
+.pd-checkbox label {
+  font-size: 14px;
+  color: #333;
+}
+
+.pd-checkbox a {
+  color: #2952a3;
+  text-decoration: underline;
+}
+
+.pd-actions {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.pd-btn-save {
+  padding: 16px 40px;
+  background-color: #1a1a1a;
+  color: #fff;
+  border: 1px solid #1a1a1a;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+
+.pd-btn-save:hover {
+  background-color: #333;
+}
+
+.pd-btn-cancel {
+  padding: 16px 40px;
+  background-color: #fff;
+  color: #1a1a1a;
+  border: 1px solid #1a1a1a;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+
+.pd-btn-cancel:hover {
+  background-color: #f5f5f5;
+}
+
+.pd-divider {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 10px 0 30px;
+}
+
+.pd-subtitle {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.pd-accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 4px 0;
+}
+
+.pd-accordion-header .pd-subtitle {
+  margin-bottom: 0;
+}
+
+.pd-accordion-icon {
+  font-size: 24px;
+  color: #999;
+  line-height: 1;
+}
+
+.pd-accordion-body {
+  margin-top: 30px;
+}
+
+.ab-page {
+  max-width: 700px;
+}
+
+.ab-section {
+  margin-bottom: 40px;
+}
+
+.ab-section-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+}
+
+.ab-empty {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+}
+
+.ab-add-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 15px;
+  color: #222;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.ab-add-link:hover {
+  color: #000;
+}
+
+.ab-address-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.ab-address-card {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 18px 20px;
+  position: relative;
+}
+
+.ab-address-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.ab-address-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.ab-default-badge {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #1a1a1a;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 3px 10px;
+  text-transform: uppercase;
+}
+
+.ab-address-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.ab-address-line {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 2px;
+}
+
+.ab-address-remove {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-top: 10px;
+  font-size: 13px;
+  color: #b06c6c;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.ab-address-remove:hover {
+  color: #875555;
+}
+
+.ab-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 20px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.ab-modal {
+  background-color: #fff;
+  width: 100%;
+  max-width: 420px;
+  padding: 30px;
+  border-radius: 4px;
+  position: relative;
+}
+
+.ab-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  line-height: 1;
+  color: #666;
+  cursor: pointer;
+}
+
+.ab-modal-close:hover {
+  color: #000;
+}
+
+.ab-modal-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 480px) {
+  .ab-modal {
+    padding: 24px 20px;
+  }
+}
+
+.oh-page {
+  max-width: 700px;
+}
+
+.oh-empty {
+  font-size: 15px;
+  color: #333;
+}
+
+.oh-order-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.oh-order-card {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 18px 20px;
+}
+
+.oh-order-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.oh-order-id {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.oh-order-status {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 3px 10px;
+}
+
+.oh-order-date,
+.oh-order-total {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 2px;
+}

@@ -1,0 +1,213 @@
+.wl-page {
+  max-width: 900px;
+}
+
+.wl-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.wl-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 28px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.wl-item:first-child {
+  padding-top: 0;
+}
+
+.wl-item-media {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 160px;
+  flex-shrink: 0;
+}
+
+.wl-item-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+
+}
+
+.wl-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wl-remove-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #423f3f;
+  padding: 4px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.wl-remove-btn:hover {
+  color: #000;
+}
+
+.wl-item-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.wl-item-title {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.wl-item-title:hover {
+  text-decoration: underline;
+}
+
+.wl-price-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.wl-original-price {
+  font-size: 14px;
+  color: #888;
+  text-decoration: line-through;
+}
+
+.wl-current-price {
+  font-size: 16px;
+  font-weight: 700;
+  color: #cc0000;
+}
+
+.wl-discount-badge {
+  background-color: #cc0000;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+.wl-meta {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 2px;
+}
+
+.wl-item-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.wl-qty {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wl-qty button {
+  width: 28px;
+  height: 28px;
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.wl-qty button:hover {
+  background: #f5f5f5;
+}
+
+.wl-qty span {
+  font-size: 14px;
+  min-width: 16px;
+  text-align: center;
+}
+
+.wl-add-to-bag {
+  padding: 14px 28px;
+  background-color: #1a1a1a;
+  color: #fff;
+  border: none;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.wl-add-to-bag:hover {
+  background-color: #333;
+}
+
+.wl-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  text-align: center;
+  gap: 12px;
+}
+
+.wl-empty h2 {
+  font-size: 22px;
+  color: #1a1a1a;
+}
+
+.wl-empty p {
+  font-size: 14px;
+  color: #666;
+}
+
+.btn-back-to-shop {
+  margin-top: 10px;
+  padding: 14px 32px;
+  background-color: #1a1a1a;
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.btn-back-to-shop:hover {
+  background-color: #333;
+}
+
+@media (max-width: 700px) {
+  .wl-item {
+    flex-wrap: wrap;
+  }
+
+  .wl-item-actions {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
