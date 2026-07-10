@@ -8,7 +8,7 @@ function Account() {
       <NavBar />
       <div className="account-page">
         <div className="account-breadcrumb">
-          <Link to="/">Home</Link> / <Link to="/account">My Account</Link>
+          <Link to="/">Home</Link> / <Link to='/shop'>Shop</Link> / <Link to="/account">My Account</Link>
         </div>
 
         <div className="account-welcome">
