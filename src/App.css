@@ -348,13 +348,22 @@ body:has(.auth-wrapper) {
 }
 
 .auth-title {
-  font-size: 32px;
+  font-size: 22px;
   font-weight: 700;
   color: #111;
   margin-bottom: 50px;
   text-align: left;
   width: 50%;
 }
+
+.auth-title-line {
+  display: block;
+}
+
+.auth-title-line + .auth-title-line {
+  margin-top: 8px;
+}
+
 
 .auth-subtitle {
   font-size: 14px;

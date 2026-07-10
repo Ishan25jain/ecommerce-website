@@ -40,7 +40,10 @@ function Login({ setIsLoggedIn }) {
   return (
     <div className="auth-wrapper">
       <div className="auth-form">
-        <h1 className="auth-title">Login in to your account <br /> to Your Style Destination</h1>
+        <h1 className="auth-title">
+          <span className="auth-title-line">Login in to your account</span>
+          <span className="auth-title-line">to Your Style Destination</span>
+        </h1>
         <p className="auth-subtitle">Login to your account</p>
 
         <div className="auth-fields">
