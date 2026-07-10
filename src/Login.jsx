@@ -30,7 +30,7 @@ function Login({ setIsLoggedIn }) {
       // Correct — mark as logged in
       localStorage.setItem('isLoggedIn', 'true')
       setIsLoggedIn(true)
-      navigate('/')
+      navigate('/shop')
     } else {
       setError('Incorrect email or password.')
     }
@@ -39,7 +39,7 @@ function Login({ setIsLoggedIn }) {
   return (
     <div className="auth-wrapper">
       <div className="auth-form">
-        <h1 className="auth-title">Welcome back <br />To the Todo List</h1>
+        <h1 className="auth-title">Login in to your account <br /> to Your Style Destination</h1>
         <p className="auth-subtitle">Login to your account</p>
 
         <div className="auth-fields">

@@ -1,4 +1,4 @@
-# Project React
+# Ecommerce Website
 
 A multi-feature React application built with Vite, combining a personal Todo List, a Watch List manager, and a fully-fledged e-commerce Shop experience — complete with authentication, cart, wishlist, and account management.
 

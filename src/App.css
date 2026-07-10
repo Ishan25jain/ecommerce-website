@@ -344,13 +344,13 @@ body:has(.auth-wrapper) {
 
 .auth-image {
   width: 50%;
-  background-image: url('/BG.png');
+  background-image: url('/front.png');
   background-size: cover;
   background-position: center;
 }
 
 .auth-title {
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 700;
   color: #111;
   margin-bottom: 50px;
