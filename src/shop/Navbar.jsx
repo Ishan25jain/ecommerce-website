@@ -34,10 +34,10 @@ function NavBar() {
           <li className="nav-sale">Sale</li>
         </ul>
 
-        <div className="nav-logo">
-          <span className="logo-text">PEPE JEANS</span>
-          <span className="logo-sub">LONDON</span>
-        </div>
+          <Link to="/shop" className="nav-logo">
+            <span className="logo-text">PEPE JEANS</span>
+            <span className="logo-sub">LONDON</span>
+          </Link>
 
         <div className="nav-icons">
           <i className="ti ti-search" onClick={() => setSearchOpen(!searchOpen)}></i>
