@@ -48,7 +48,7 @@ function App() {
           pauseOnHover
         />
         <Routes>
-            <Route path="/" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
+            <Route path="/" element={<Navigate to="/shop" replace />} />
             <Route
               path="/todo"
               element={
