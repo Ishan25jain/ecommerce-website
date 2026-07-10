@@ -43,8 +43,11 @@ function Wishlist() {
   }
 
   return (
-    <div className="wl-page">
-      <h1 className="account-overview-title">Wishlist</h1>
+  <div className="wl-page">
+    <Link to="/shop" className="btn-back-to-shop">
+      ← Back to Shop
+    </Link>
+    <h1 className="account-overview-title">Wishlist</h1>
 
       <ul className="wl-list">
         {wishlistItems.map((item) => {

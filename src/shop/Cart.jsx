@@ -31,8 +31,11 @@ function Cart() {
   }
 
   return (
-    <div className="cart-page">
-      <h1>Shopping Cart</h1>
+  <div className="cart-page">
+    <Link to="/shop" className="btn-back-to-shop">
+      ← Back to Shop
+    </Link>
+    <h1>Shopping Cart</h1>
 
       <div className="cart-container">
         <div className="cart-items-section">
