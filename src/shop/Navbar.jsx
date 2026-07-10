@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { CartContext } from './context/CartContext';
 import { WishlistContext } from './context/WishlistContext';
 
@@ -27,11 +27,21 @@ function NavBar() {
     <>
       <nav className="navbar">
         <ul className="nav-links">
-          <li>New Arrivals</li>
-          <li>Mens</li>
-          <li>Womens</li>
-          <li>Footwear</li>
-          <li className="nav-sale">Sale</li>
+          <li>
+            <NavLink to="/shop" className="nav-link-btn">New Arrivals</NavLink>
+          </li>
+          <li>
+            <NavLink to="/shop/category/mens-shirts" className="nav-link-btn">Mens</NavLink>
+          </li>
+          <li>
+            <NavLink to="/shop/category/womens-dresses" className="nav-link-btn">Womens</NavLink>
+          </li>
+          <li>
+            <NavLink to="/shop/category/mens-shoes" className="nav-link-btn">Footwear</NavLink>
+          </li>
+          <li className="nav-sale">
+            <NavLink to="/shop" className="nav-link-btn">Sale</NavLink>
+          </li>
         </ul>
 
           <Link to="/shop" className="nav-logo">
