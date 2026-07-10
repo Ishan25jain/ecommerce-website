@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react';
-import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { CartContext } from './context/CartContext';
 import { WishlistContext } from './context/WishlistContext';
 
@@ -27,32 +27,22 @@ function NavBar() {
     <>
       <nav className="navbar">
         <ul className="nav-links">
-          <li>
-            <NavLink to="/shop" className="nav-link-btn">New Arrivals</NavLink>
-          </li>
-          <li>
-            <NavLink to="/shop/category/mens-shirts" className="nav-link-btn">Mens</NavLink>
-          </li>
-          <li>
-            <NavLink to="/shop/category/womens-dresses" className="nav-link-btn">Womens</NavLink>
-          </li>
-          <li>
-            <NavLink to="/shop/category/mens-shoes" className="nav-link-btn">Footwear</NavLink>
-          </li>
-          <li className="nav-sale">
-            <NavLink to="/shop" className="nav-link-btn">Sale</NavLink>
-          </li>
+          <li>New Arrivals</li>
+          <li>Mens</li>
+          <li>Womens</li>
+          <li>Footwear</li>
+          <li className="nav-sale">Sale</li>
         </ul>
 
-          <Link to="/shop" className="nav-logo">
-            <span className="logo-text">PEPE JEANS</span>
-            <span className="logo-sub">LONDON</span>
-          </Link>
+        <Link to="/shop" className="nav-logo">
+          <span className="logo-text">PEPE JEANS</span>
+          <span className="logo-sub">LONDON</span>
+        </Link>
 
         <div className="nav-icons">
           <i className="ti ti-search" onClick={() => setSearchOpen(!searchOpen)}></i>
 
-          <Link to="/account/wishlist" className="cart-icon-link">
+          <Link to="/shop/wishlist" className="cart-icon-link">
             <i className="ti ti-heart"></i>
             {wishlistItems.length > 0 && (
               <span className="cart-badge">{wishlistItems.length}</span>

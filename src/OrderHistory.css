@@ -1,0 +1,65 @@
+.order-history-page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.order-history-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: #666;
+}
+
+.order-card {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.order-status {
+  color: #1a7f37;
+  font-weight: 600;
+}
+
+.order-item-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  padding: 4px 0;
+}
+
+.order-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.order-cancel-btn {
+  background: none;
+  border: 1px solid #d33;
+  color: #d33;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.order-cancel-btn:hover {
+  background: #d33;
+  color: #fff;
+}

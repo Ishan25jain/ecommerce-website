@@ -20,7 +20,7 @@ body:has(.shop-page) {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 40px;
+  padding: 18px 50px;
   border-bottom: 1px solid #eee;
   position: sticky;
   top: 0;
@@ -34,7 +34,16 @@ body:has(.shop-page) {
   gap: 28px;
   font-size: 13px;
   font-weight: 500;
+  color: #222;
   cursor: pointer;
+}
+
+.nav-links li {
+  transition: color 0.2s;
+}
+
+.nav-links li:hover {
+  color: #6c63ff;
 }
 
 .nav-sale {
@@ -42,30 +51,14 @@ body:has(.shop-page) {
   font-weight: 700;
 }
 
-.nav-link-btn {
-  display: inline-block;
-  padding: 6px 14px;
-  border-radius: 20px;
-  color: inherit;
-  text-decoration: none;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.nav-link-btn:hover {
-  background-color: #f2f2f2;
-}
-
-.nav-link-btn.active {
-  background-color: #111;
-  color: #fff;
+.nav-sale:hover {
+  color: #cc0000 !important;
 }
 
 .nav-logo {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-.nav-logo {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
@@ -85,8 +78,10 @@ body:has(.shop-page) {
 
 .nav-icons {
   display: flex;
-  gap: 20px;
-  font-size: 20px;
+  align-items: center;
+  gap: 24px;
+  font-size: 19px;
+  color: #222;
   cursor: pointer;
 }
 
@@ -968,6 +963,7 @@ body:has(.shop-page) {
   position: relative;
   display: inline-flex;
   align-items: center;
+  gap: 4px;
   text-decoration: none;
   color: inherit;
   cursor: pointer;
@@ -978,19 +974,9 @@ body:has(.shop-page) {
 }
 
 .cart-badge {
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  background-color: #6c63ff;
-  color: white;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  font-weight: bold;
+  font-size: 14px;
+  font-weight: 600;
+  color: #111;
 }
 
 /* .cart-item-remove {
