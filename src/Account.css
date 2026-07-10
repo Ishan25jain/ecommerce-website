@@ -576,3 +576,44 @@
   color: #555;
   margin-bottom: 2px;
 }
+/* ===================== RESPONSIVE (phones) ===================== */
+@media (max-width: 480px) {
+  .account-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 14px 20px;
+  }
+
+  .account-overview-title {
+    font-size: 24px;
+  }
+
+  .pd-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .pd-actions {
+    flex-direction: column;
+  }
+
+  .pd-btn-save,
+  .pd-btn-cancel {
+    width: 100%;
+  }
+
+  .account-links {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .ab-address-card-header {
+    flex-wrap: wrap;
+  }
+
+  .oh-order-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}
