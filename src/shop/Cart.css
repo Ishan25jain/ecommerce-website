@@ -239,3 +239,15 @@
     grid-column: span 1;
   }
 }
+
+.back-link {
+  display: inline-block;
+  color: #6c63ff;
+  text-decoration: none;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.back-link:hover {
+  color: #5a52d5;
+}

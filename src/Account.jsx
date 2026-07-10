@@ -1,8 +1,19 @@
+import { useState, useEffect } from 'react'
 import { Outlet, NavLink, Link } from 'react-router-dom'
 import NavBar from './shop/Navbar'
 import './Account.css'
 
 function Account() {
+  const [userName, setUserName]= useState('')
+
+  useEffect(() => {
+    try {
+      const saved = JSON.parse(localStorage.getItem('currentUser'))
+      if (saved && saved.name) {
+        setUserName(saved.name.split(' ')[0])
+      }
+    } catch {}
+  }, [])
   return (
     <>
       <NavBar />
@@ -12,7 +23,7 @@ function Account() {
         </div>
 
         <div className="account-welcome">
-          Welcome Ishan!
+          Welcome {userName || 'back'}!
         </div>
 
         <div className="account-layout">

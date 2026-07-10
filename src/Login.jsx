@@ -29,6 +29,7 @@ function Login({ setIsLoggedIn }) {
     if (matchedUser) {
       // Correct — mark as logged in
       localStorage.setItem('isLoggedIn', 'true')
+      localStorage.setItem('currentUser', JSON.stringify(matchedUser))
       setIsLoggedIn(true)
       navigate('/shop')
     } else {
