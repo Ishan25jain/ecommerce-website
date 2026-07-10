@@ -48,16 +48,17 @@ function App() {
           pauseOnHover
         />
         <Routes>
-          <Route
-            path="/"
-            element={
-              isLoggedIn ? (
-                <TodoPage theme={theme} toggleTheme={toggleTheme} setIsLoggedIn={setIsLoggedIn} />
-              ) : (
-                <Navigate to="/login" />
-              )
-            }
-          />
+            <Route path="/" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
+            <Route
+              path="/todo"
+              element={
+                isLoggedIn ? (
+                  <TodoPage theme={theme} toggleTheme={toggleTheme} setIsLoggedIn={setIsLoggedIn} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />  
           <Route
             path="/watches"
             element={
