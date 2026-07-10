@@ -905,7 +905,6 @@ body:has(.shop-page) {
   max-width: 500px;
 }
 
-
 .loader-wrapper {
   display: flex;
   flex-direction: column;
@@ -938,7 +937,6 @@ body:has(.shop-page) {
   }
 }
 
-
 .add-to-cart-btn {
   background-color: #6c63ff;
   color: white;
@@ -957,7 +955,6 @@ body:has(.shop-page) {
 .add-to-cart-btn:hover {
   background-color: #5247e6;
 }
-
 
 .cart-icon-link {
   position: relative;
@@ -985,9 +982,6 @@ body:has(.shop-page) {
   background-color: #cc0000;
   padding: 12px;
 } */
-
-
-
 
 .product-detail-actions {
   display: flex;

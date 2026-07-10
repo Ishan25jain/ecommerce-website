@@ -42,7 +42,7 @@ function NavBar() {
         <div className="nav-icons">
           <i className="ti ti-search" onClick={() => setSearchOpen(!searchOpen)}></i>
 
-          <Link to="/shop/wishlist" className="cart-icon-link">
+          <Link to="/account/wishlist" className="cart-icon-link">
             <i className="ti ti-heart"></i>
             {wishlistItems.length > 0 && (
               <span className="cart-badge">{wishlistItems.length}</span>
