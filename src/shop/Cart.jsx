@@ -2,10 +2,11 @@ import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext } from './context/CartContext';
 import { toast } from 'react-toastify';
+import CheckoutModal from './CheckoutModal';
 import './Cart.css';
 
 function Cart() {
-  const { cartItems, removeFromCart, updateQuantity, clearCart } = useContext(CartContext);
+  const { cartItems, removeFromCart, updateQuantity } = useContext(CartContext);
   const [showCheckoutModal, setShowCheckoutModal] = useState(false);
 
   const handleRemove = (productId, name) => {
@@ -94,9 +95,9 @@ function Cart() {
 
                   <div className="cart-item-price-row">
                     {hasDiscount && (
-                      <span className="cart-item-original-price">₹{item.price}</span>
+                      <span className="cart-item-original-price">${item.price}</span>
                     )}
-                    <span className="cart-item-price">₹{discountedPrice}</span>
+                    <span className="cart-item-price">${discountedPrice}</span>
                     {hasDiscount && (
                       <span className="cart-item-discount-badge">
                         {Math.round(item.discountPercentage)}% off
@@ -148,27 +149,20 @@ function Cart() {
             {/* Summary Items */}
             <div className="summary-item">
               <span className="summary-label">Bag Total</span>
-              <span className="summary-value">₹{totals.bagTotal}</span>
+              <span className="summary-value">${totals.bagTotal}</span>
             </div>
-
-            {totals.totalDiscount > 0 && (
-              <div className="summary-item discount">
-                <span className="summary-label">Discount on MRP</span>
-                <span className="summary-value">−₹{totals.totalDiscount}</span>
-              </div>
-            )}
 
             {totals.prepaidDiscount > 0 && (
               <div className="summary-item discount">
                 <span className="summary-label">Prepaid Discount</span>
-                <span className="summary-value">−₹{totals.prepaidDiscount}</span>
+                <span className="summary-value">−${totals.prepaidDiscount}</span>
               </div>
             )}
 
             <div className="summary-item">
               <span className="summary-label">Shipping Charges</span>
               <span className={`summary-value ${totals.shippingCharges === 0 ? 'free' : ''}`}>
-                {totals.shippingCharges === 0 ? 'FREE' : `₹${totals.shippingCharges}`}
+                {totals.shippingCharges === 0 ? 'FREE' : `$${totals.shippingCharges}`}
               </span>
             </div>
 
@@ -178,7 +172,7 @@ function Cart() {
             {/* Total */}
             <div className="summary-item total">
               <span className="summary-label">Total Amount</span>
-              <span className="summary-value-total">₹{totals.totalAmount}</span>
+              <span className="summary-value-total">${totals.totalAmount}</span>
             </div>
 
             {/* Info Message */}
@@ -198,6 +192,13 @@ function Cart() {
           </div>
         </div>
       </div>
+
+      {showCheckoutModal && (
+        <CheckoutModal
+          onClose={() => setShowCheckoutModal(false)}
+          totals={totals}
+        />
+      )}
     </div>
   );
 }

@@ -6,6 +6,7 @@ import './App.css';
 
 import { CartProvider } from './shop/context/CartContext';
 import { WishlistProvider } from './shop/context/WishlistContext';
+import { OrdersProvider } from './shop/context/OrdersContext';
 import { useLocalStorage } from './hooks/useLocalStorage';
 
 import TodoPage from './TodoPage';
@@ -39,6 +40,7 @@ function App() {
   return (
     <CartProvider>
       <WishlistProvider>
+        <OrdersProvider>
         <ToastContainer
           position="bottom-right"
           autoClose={3000}
@@ -87,6 +89,7 @@ function App() {
           </Route>
           <Route path="*" element={<h1 style={{ padding: '40px' }}>404 — Page not found</h1>} />
         </Routes>
+        </OrdersProvider>
       </WishlistProvider>
     </CartProvider>
   );

@@ -576,6 +576,92 @@
   color: #555;
   margin-bottom: 2px;
 }
+
+/* ===================== ORDER HISTORY: ITEM LIST ===================== */
+
+.oh-item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 14px 0;
+}
+
+.oh-item-row {
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  gap: 12px;
+  align-items: center;
+}
+
+.oh-item-thumb {
+  width: 56px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+}
+
+.oh-item-info {
+  min-width: 0;
+}
+
+.oh-item-name {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.oh-item-meta {
+  font-size: 12px;
+  color: #888;
+}
+
+.oh-item-price {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #1a1a1a;
+  white-space: nowrap;
+}
+
+.oh-order-divider {
+  height: 1px;
+  background-color: #f0f0f0;
+  margin: 12px 0;
+}
+
+/* ===================== ORDER HISTORY: CONTACT / ADDRESS ===================== */
+
+.oh-order-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.oh-detail-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.oh-detail-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: #999;
+}
+
+.oh-detail-value {
+  font-size: 13.5px;
+  color: #333;
+  line-height: 1.4;
+}
+
 /* ===================== RESPONSIVE (phones) ===================== */
 @media (max-width: 480px) {
   .account-nav {
@@ -615,5 +701,13 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 6px;
+  }
+
+  .oh-item-row {
+    grid-template-columns: 48px 1fr;
+  }
+
+  .oh-item-price {
+    grid-column: 2 / 3;
   }
 }
