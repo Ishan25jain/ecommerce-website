@@ -5,6 +5,7 @@ import { CartContext } from './context/CartContext'
 import { WishlistContext } from './context/WishlistContext'
 import { toast } from 'react-toastify'
 import Loader from './Loader'
+import NavBar from './Navbar'
 
 
 function ProductDetail() {
@@ -35,10 +36,22 @@ function ProductDetail() {
       })
   }, [id])
 
-    if (loading) return <Loader />
-    if (error) return <p style={{ padding: '40px', color: 'red' }}>Error: {error}</p>
+    if (loading) return(
+      <>
+      <NavBar />
+      <Loader />
+      </>
+    ) 
+    if (error) return (
+    <>
+      <NavBar />
+    <p style={{ padding: '40px', color: 'red' }}>Error: {error}</p>
+      </>
+    )
 
   return (
+    <>
+    <NavBar />
     <div className="product-detail-page">
       <Link to="/shop" className="back-link">← Back to Shop</Link>
 
@@ -126,6 +139,7 @@ function ProductDetail() {
         </div>
       </div>
     </div>
+    </>
   )
 }
 
