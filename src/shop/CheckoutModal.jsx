@@ -112,8 +112,8 @@ function CheckoutModal({ onClose, totals }) {
           </button>
         </div>
 
-        {/* Footer trust badges */}
         <div className="checkout-footer">
+            <span>·</span>
           <span>PCI DSS Certified</span>
           <span>·</span>
           <span>Secured Payments</span>
