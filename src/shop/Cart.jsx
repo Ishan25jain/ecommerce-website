@@ -4,6 +4,7 @@ import { CartContext } from './context/CartContext';
 import { toast } from 'react-toastify';
 import CheckoutModal from './CheckoutModal';
 import { formatPrice } from './utils/formatPrice';
+import NavBar from './Navbar';
 import './Cart.css';
 
 function Cart() {
@@ -58,18 +59,23 @@ function Cart() {
 
   if (!cartItems.length) {
     return (
-      <div className="cart-empty">
-        <h2>Your Cart is Empty</h2>
-        <p>Add items to your cart to get started</p>
-        <Link to="/shop" className="btn-back-to-shop">
-          Continue Shopping
-        </Link>
-      </div>
+      <>
+        <NavBar />
+        <div className="cart-empty">
+          <h2>Your Cart is Empty</h2>
+          <p>Add items to your cart to get started</p>
+          <Link to="/shop" className="btn-back-to-shop">
+            Continue Shopping
+          </Link>
+        </div>
+      </>
     );
   }
 
   return (
-    <div className="cart-page">
+    <>
+      <NavBar />
+      <div className="cart-page">
       <h1 className="cart-title">Shopping Bag</h1>
 
       <div className="cart-container">
@@ -200,7 +206,8 @@ function Cart() {
           totals={totals}
         />
       )}
-    </div>
+      </div>
+    </>
   );
 }
 

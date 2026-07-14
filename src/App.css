@@ -50,7 +50,9 @@ body {
 }
 
 body:has(.shop-page),
-body:has(.account-page) {
+body:has(.account-page),
+body:has(.cart-page),
+body:has(.cart-empty) {
   display: block;            
   justify-content: unset;     
   align-items: unset;          
@@ -60,7 +62,9 @@ body:has(.account-page) {
 }
 
 #root:has(.shop-page),
-#root:has(.account-page) {
+#root:has(.account-page),
+#root:has(.cart-page),
+#root:has(.cart-empty) {
   display: block;            
   height: auto;
   width: 100%;
