@@ -1059,4 +1059,9 @@ body:has(.shop-page) {
     gap: 10px;
     font-size: 10px;
   }
+
+  .footer {
+    padding: 10px;
+    margin: 10px;
+  }
 }

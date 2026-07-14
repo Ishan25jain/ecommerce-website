@@ -342,7 +342,7 @@ body:has(.auth-wrapper) {
 
 .auth-image {
   width: 50%;
-  background-image: url('/BG.png');
+  background-image: url('/front.png');
   background-size: cover;
   background-position: center;
 }
