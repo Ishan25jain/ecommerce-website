@@ -49,9 +49,16 @@ function NavBar() {
             )}
           </Link>
 
-          <Link to="/account" className="cart-icon-link">
+          <button
+            type="button"
+            className="cart-icon-link nav-icon-btn"
+            onClick={() => {
+              const loggedIn = localStorage.getItem('isLoggedIn') === 'true'
+              navigate(loggedIn ? '/account' : '/login')
+            }}
+          >
             <i className="ti ti-user"></i>
-          </Link>
+          </button>
 
           <i className="ti ti-flag"></i>
 

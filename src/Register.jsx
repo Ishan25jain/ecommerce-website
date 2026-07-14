@@ -3,7 +3,9 @@ import { Link, useNavigate } from 'react-router-dom'
 
 function Register() {
   const [showPassword, setShowPassword] = useState(false)
-  const [name, setName] = useState('')
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
+  const [mobile, setMobile] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
@@ -11,8 +13,13 @@ function Register() {
   const navigate = useNavigate()
 
   function handleRegister() {
-    if (!name || !email || !password) {
+    if (!firstName || !lastName || !mobile || !email || !password) {
       setError('All fields are required.')
+      return
+    }
+
+    if (!/^\d{10}$/.test(mobile)) {
+      setError('Please enter a valid 10-digit mobile number.')
       return
     }
 
@@ -26,10 +33,22 @@ function Register() {
     }
 
     // Save user to localStorage
-    const updateUsers = [...existingUsers, { name, email, password}]
+    const newUser = {
+      name: `${firstName} ${lastName}`.trim(),
+      firstName,
+      lastName,
+      mobile,
+      email,
+      password,
+      gender: '',
+      birthday: '',
+      anniversary: '',
+      agreedTerms: false
+    }
+    const updateUsers = [...existingUsers, newUser]
     localStorage.setItem('users', JSON.stringify((updateUsers)))
 
-    // Redirect to login
+    // Account created — send them to Login to sign in themselves
     navigate('/login')
   }
 
@@ -43,9 +62,25 @@ function Register() {
           <input
             type="text"
             className="auth-input"
-            placeholder="Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            placeholder="First Name"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+          />
+          <input
+            type="text"
+            className="auth-input"
+            placeholder="Last Name"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+          />
+          <input
+            type="tel"
+            inputMode="numeric"
+            maxLength={10}
+            className="auth-input"
+            placeholder="Phone Number"
+            value={mobile}
+            onChange={(e) => setMobile(e.target.value.replace(/\D/g, '').slice(0, 10))}
           />
           <input
             type="email"

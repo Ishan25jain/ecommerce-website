@@ -966,6 +966,14 @@ body:has(.shop-page) {
   cursor: pointer;
 }
 
+.nav-icon-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+}
+
 .cart-icon-link:hover {
   opacity: 0.7;
 }

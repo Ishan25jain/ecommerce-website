@@ -79,7 +79,7 @@ function App() {
           <Route path="/shop/category/:categoryName" element={<CategoryProducts />} />
           <Route path="/shop/search" element={<SearchResults />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/account" element={<Account />}>
+          <Route path="/account" element={<Account setIsLoggedIn={setIsLoggedIn} />}>
           
             <Route index element={<AccountOverview />} />
             <Route path="personal-details" element={<PersonalDetails />} />

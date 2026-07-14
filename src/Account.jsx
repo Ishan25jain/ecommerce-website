@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react'
-import { Outlet, NavLink, Link } from 'react-router-dom'
+import { Outlet, NavLink, Link, useNavigate } from 'react-router-dom'
 import NavBar from './shop/Navbar'
 import './Account.css'
 
-function Account() {
+function Account({ setIsLoggedIn }) {
   const [userName, setUserName]= useState('')
+  const navigate = useNavigate()
 
   useEffect(() => {
     try {
@@ -14,6 +15,14 @@ function Account() {
       }
     } catch {}
   }, [])
+
+  function handleSignOut() {
+    localStorage.removeItem('isLoggedIn')
+    localStorage.removeItem('currentUser')
+    if (setIsLoggedIn) setIsLoggedIn(false)
+    navigate('/login')
+  }
+
   return (
     <>
       <NavBar />
@@ -89,7 +98,7 @@ function Account() {
 
             <hr className="account-divider-line" />
 
-            <button className="account-signout">Sign Out</button>
+            <button className="account-signout" onClick={handleSignOut}>Sign Out</button>
           </aside>
 
           <main className="account-main">

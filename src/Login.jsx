@@ -31,7 +31,7 @@ function Login({ setIsLoggedIn }) {
       localStorage.setItem('isLoggedIn', 'true')
       localStorage.setItem('currentUser', JSON.stringify(matchedUser))
       setIsLoggedIn(true)
-      navigate('/shop')
+      navigate('/account')
     } else {
       setError('Incorrect email or password.')
     }

@@ -25,9 +25,19 @@ function PersonalDetails() {
 
   useEffect(() => {
     try {
-      const saved = JSON.parse(localStorage.getItem('user'))
+      const saved = JSON.parse(localStorage.getItem('currentUser'))
       if (saved) {
-        setFormData({ ...EMPTY_FORM, ...saved })
+        // Older accounts may only have a combined "name" field — split it
+        // so the First Name / Last Name inputs are pre-filled correctly.
+        let firstName = saved.firstName
+        let lastName = saved.lastName
+        if (!firstName && saved.name) {
+          const cleanedName = saved.name.trim().replace(/\s+/g, ' ')
+          const [first, ...rest] = cleanedName.split(' ')
+          firstName = first || ''
+          lastName = rest.join(' ')
+        }
+        setFormData({ ...EMPTY_FORM, ...saved, firstName, lastName })
       }
     } catch {
       // ignore malformed data
@@ -57,7 +67,36 @@ function PersonalDetails() {
       toast.error('Please accept the Privacy Policy and Terms and Conditions')
       return
     }
-    localStorage.setItem('user', JSON.stringify(formData))
+    const updatedUser = {
+      ...formData,
+      name: `${formData.firstName} ${formData.lastName}`.trim()
+    }
+
+    // Grab the original email BEFORE overwriting currentUser, so we can
+    // still find the matching record in the users list (in case the
+    // email itself was changed on this save).
+    let originalEmail
+    try {
+      originalEmail = JSON.parse(localStorage.getItem('currentUser'))?.email
+    } catch {
+      originalEmail = undefined
+    }
+
+    // Keep the active session in sync
+    localStorage.setItem('currentUser', JSON.stringify(updatedUser))
+
+    // Persist the change into the users list too, so it's still there
+    // the next time this person logs in
+    try {
+      const users = JSON.parse(localStorage.getItem('users')) || []
+      const updatedUsers = users.map((u) =>
+        u.email === (originalEmail || updatedUser.email) ? { ...u, ...updatedUser } : u
+      )
+      localStorage.setItem('users', JSON.stringify(updatedUsers))
+    } catch {
+      // ignore malformed data
+    }
+
     toast.success('Personal details updated successfully')
     navigate('/account')
   }
