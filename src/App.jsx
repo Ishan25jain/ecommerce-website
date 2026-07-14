@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import { useState } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
@@ -92,6 +93,7 @@ function App() {
         </Routes>
         </OrdersProvider>
       </WishlistProvider>
+      <Analytics />
     </CartProvider>
     
   );
