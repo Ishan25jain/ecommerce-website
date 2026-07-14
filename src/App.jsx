@@ -9,6 +9,7 @@ import { WishlistProvider } from './shop/context/WishlistContext';
 import { OrdersProvider } from './shop/context/OrdersContext';
 import { useLocalStorage } from './hooks/useLocalStorage';
 
+
 import TodoPage from './TodoPage';
 import WatchList from './watchList';
 import Register from './Register';
@@ -92,6 +93,7 @@ function App() {
         </OrdersProvider>
       </WishlistProvider>
     </CartProvider>
+    
   );
 }
 

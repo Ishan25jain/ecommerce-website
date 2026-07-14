@@ -3,10 +3,6 @@ import { OrdersContext } from './orders-context';
 
 const ORDER_SEQ_KEY = 'orderIdSeq';
 
-// Generates short, human-friendly, sequential order numbers like ORD-000001,
-// ORD-000002, etc. The counter is kept in its own localStorage key (separate
-// from the orders list) so numbers keep incrementing even if older orders
-// are deleted later.
 function getNextOrderId() {
   let seq = 1;
   try {
