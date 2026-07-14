@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { formatPrice } from './shop/utils/formatPrice'
 
 function formatDate(isoString) {
   try {
@@ -37,7 +38,7 @@ function OrderItemRow({ item }) {
         )}
         <p className="oh-item-meta">Qty: {item.quantity}</p>
       </div>
-      <span className="oh-item-price">${unitPrice * item.quantity}</span>
+      <span className="oh-item-price">${formatPrice(unitPrice * item.quantity)}</span>
     </div>
   )
 }
@@ -86,7 +87,7 @@ function OrderCard({ order }) {
         )}
       </div>
 
-      <p className="oh-order-total">Total: ${order.total}</p>
+      <p className="oh-order-total">Total: ${formatPrice(order.total)}</p>
     </li>
   )
 }

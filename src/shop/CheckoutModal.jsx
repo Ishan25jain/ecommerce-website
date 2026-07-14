@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { CartContext } from './context/CartContext';
 import { OrdersContext } from './context/orders-context';
+import { formatPrice } from './utils/formatPrice';
 import './CheckoutModal.css';
 
 function CheckoutModal({ onClose, totals }) {
@@ -70,7 +71,7 @@ function CheckoutModal({ onClose, totals }) {
                     <p className="checkout-product-meta">Qty: {item.quantity}</p>
                   </div>
                   <span className="checkout-product-price">
-                    ${discountedPrice * item.quantity}
+                    ${formatPrice(discountedPrice * item.quantity)}
                   </span>
                 </div>
               );
@@ -81,12 +82,12 @@ function CheckoutModal({ onClose, totals }) {
           <div className="checkout-pay-total-card">
             <div className="checkout-pay-total-row">
               <span>Bag Total</span>
-              <span>${totals.bagTotal}</span>
+              <span>${formatPrice(totals.bagTotal)}</span>
             </div>
             {totals.prepaidDiscount > 0 && (
               <div className="checkout-pay-total-row checkout-free">
                 <span>Prepaid Discount</span>
-                <span>−${totals.prepaidDiscount}</span>
+                <span>−${formatPrice(totals.prepaidDiscount)}</span>
               </div>
             )}
             <div className="checkout-pay-total-row">
@@ -98,7 +99,7 @@ function CheckoutModal({ onClose, totals }) {
             <div className="checkout-pay-total-divider" />
             <div className="checkout-pay-total-row checkout-pay-grand-total">
               <span>Total Amount</span>
-              <span>${totals.totalAmount}</span>
+              <span>${formatPrice(totals.totalAmount)}</span>
             </div>
           </div>
 
@@ -107,7 +108,7 @@ function CheckoutModal({ onClose, totals }) {
             onClick={handleConfirmPay}
             disabled={placingOrder}
           >
-            {placingOrder ? 'Processing…' : `🔒 CONFIRM & PAY $${totals.totalAmount}`}
+            {placingOrder ? 'Processing…' : `🔒 CONFIRM & PAY $${formatPrice(totals.totalAmount)}`}
           </button>
         </div>
 

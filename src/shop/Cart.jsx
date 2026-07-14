@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { CartContext } from './context/CartContext';
 import { toast } from 'react-toastify';
 import CheckoutModal from './CheckoutModal';
+import { formatPrice } from './utils/formatPrice';
 import './Cart.css';
 
 function Cart() {
@@ -40,11 +41,11 @@ function Cart() {
     const totalAmount = bagTotal - totalDiscount - prepaidDiscount + shippingCharges;
 
     return {
-      bagTotal,
-      totalDiscount,
+      bagTotal: Math.round((bagTotal + Number.EPSILON) * 100) / 100,
+      totalDiscount: Math.round((totalDiscount + Number.EPSILON) * 100) / 100,
       shippingCharges,
       prepaidDiscount,
-      totalAmount,
+      totalAmount: Math.round((totalAmount + Number.EPSILON) * 100) / 100,
     };
   };
 
@@ -95,9 +96,9 @@ function Cart() {
 
                   <div className="cart-item-price-row">
                     {hasDiscount && (
-                      <span className="cart-item-original-price">${item.price}</span>
+                      <span className="cart-item-original-price">${formatPrice(item.price)}</span>
                     )}
-                    <span className="cart-item-price">${discountedPrice}</span>
+                    <span className="cart-item-price">${formatPrice(discountedPrice)}</span>
                     {hasDiscount && (
                       <span className="cart-item-discount-badge">
                         {Math.round(item.discountPercentage)}% off
@@ -149,13 +150,13 @@ function Cart() {
             {/* Summary Items */}
             <div className="summary-item">
               <span className="summary-label">Bag Total</span>
-              <span className="summary-value">${totals.bagTotal}</span>
+              <span className="summary-value">${formatPrice(totals.bagTotal)}</span>
             </div>
 
             {totals.prepaidDiscount > 0 && (
               <div className="summary-item discount">
                 <span className="summary-label">Prepaid Discount</span>
-                <span className="summary-value">−${totals.prepaidDiscount}</span>
+                <span className="summary-value">−${formatPrice(totals.prepaidDiscount)}</span>
               </div>
             )}
 
@@ -172,7 +173,7 @@ function Cart() {
             {/* Total */}
             <div className="summary-item total">
               <span className="summary-label">Total Amount</span>
-              <span className="summary-value-total">${totals.totalAmount}</span>
+              <span className="summary-value-total">${formatPrice(totals.totalAmount)}</span>
             </div>
 
             {/* Info Message */}
