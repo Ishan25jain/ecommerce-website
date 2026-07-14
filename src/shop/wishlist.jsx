@@ -78,9 +78,9 @@ function Wishlist() {
 
                 <div className="wl-price-row">
                   {hasDiscount && (
-                    <span className="wl-original-price">₹{item.price}</span>
+                    <span className="wl-original-price">${item.price}</span>
                   )}
-                  <span className="wl-current-price">₹{discountedPrice}</span>
+                  <span className="wl-current-price">${discountedPrice}</span>
                   {hasDiscount && (
                     <span className="wl-discount-badge">
                       -{Math.round(item.discountPercentage)}%
