@@ -36,17 +36,9 @@ function ProductDetail() {
       })
   }, [id])
 
-    if (loading) return(
-      <>
-      <NavBar />
-      <Loader />
-      </>
-    ) 
+    if (loading) return <Loader />
     if (error) return (
-    <>
-      <NavBar />
-    <p style={{ padding: '40px', color: 'red' }}>Error: {error}</p>
-      </>
+      <p style={{ padding: '40px', color: 'red' }}>Error: {error}</p>
     )
 
   return (
