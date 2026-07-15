@@ -76,7 +76,7 @@
 }
 
 .social-smiley {
-  font-size: 22px;
+  font-size: 35px;
   color: #111;
 }
 
@@ -106,22 +106,28 @@
 
 /* ============ Newsletter box ============ */
 .site-footer-newsletter {
-  position: relative;
-  max-width: 640px;
   margin: 0;
   padding: 48px 0 40px;
   text-align: left;
 }
 
+.newsletter-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  max-width: 100%;
+  margin-bottom: 14px;
+}
+
 .newsletter-region {
-  position: absolute;
-  top: 48px;
-  right: -0px;
+  flex: 0 0 auto;
   display: flex;
   align-items: center;
   gap: 6px;
   font-size: 13px;
   color: #111;
+  white-space: nowrap;
 }
 
 .newsletter-region-label {
@@ -141,7 +147,7 @@
 .site-footer-newsletter h3 {
   font-size: 28px;
   font-weight: 700;
-  margin-bottom: 14px;
+  margin: 0;
   color: #111;
 }
 
@@ -229,8 +235,10 @@
 .site-footer-links {
   display: flex;
   align-items: flex-start;
-  gap: 180px;
-  padding: 40px 0 32px;
+  gap: 175px;
+  /* padding: 40px 10px 32px; */
+  padding-bottom: 80px;
+  line-height: 20px;
 }
 
 .footer-col {
@@ -243,7 +251,7 @@
   align-items: center;
   justify-content: space-between;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 400;
   color: #111;
   margin-bottom: 14px;
   cursor: pointer;
@@ -272,7 +280,7 @@
 }
 
 .footer-col ul li {
-  font-size: 13px;
+  font-size: 12px;
   color: #666;
   cursor: pointer;
 }
@@ -346,9 +354,10 @@
     align-self: center;
   }
 
-  .newsletter-region {
-    position: static;
-    margin-bottom: 16px;
+  .newsletter-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
 }
 

@@ -78,20 +78,21 @@ function Footer() {
           <span>Follow us on</span>
           <div className="social-icons">
             <a href="#" aria-label="Instagram"><i className="ti ti-brand-instagram"></i></a>
-            <a href="#" aria-label="Facebook"><i className="ti ti-brand-facebook"></i></a>
-            <a href="#" aria-label="YouTube"><i className="ti ti-brand-youtube"></i></a>
+            <a href="#" aria-label="Facebook"><i className="ti ti-brand-facebook-filled"></i></a>
+            <a href="#" aria-label="YouTube"><i className="ti ti-brand-youtube-filled"></i></a>
           </div>
         </div>
       </div>
 
       {/* Newsletter */}
       <div className="site-footer-newsletter">
-        <div className="newsletter-region">
-          <span className="newsletter-region-label">India</span>
-          <button type="button" className="newsletter-region-change">Change</button>
+        <div className="newsletter-header">
+          <h3>ReactVault Newsletter</h3>
+          <div className="newsletter-region">
+            <span className="newsletter-region-label">India</span>
+            <button type="button" className="newsletter-region-change">Change</button>
+          </div>
         </div>
-
-        <h3>ReactVault Newsletter</h3>
         <p>
           Have you signed up for our newsletter yet? Be the first to hear about
           exclusive offers, new drops, and much more. Subscribe now!
