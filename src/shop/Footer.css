@@ -162,7 +162,7 @@
 .newsletter-label {
   display: block;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 400;
   color: #111;
   margin-bottom: 10px;
 }
@@ -292,8 +292,8 @@
 .site-footer-copyright {
   margin-left: auto;
   align-self: flex-start;
-  font-size: 13px;
-  color: #888;
+  font-size: 15px;
+  color: #000000;
   white-space: nowrap;
 }
 

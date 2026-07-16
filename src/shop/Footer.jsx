@@ -68,7 +68,7 @@ function Footer() {
 
       {/* Tagline */}
       <h2 className="site-footer-tagline">
-        Shop the Latest Trends for Men &amp; Women Online at ReactVault.
+        Shop the latest Jeans For Men & Women Online at Pepe Jeans India.
       </h2>
 
       {/* Social row */}
@@ -87,7 +87,7 @@ function Footer() {
       {/* Newsletter */}
       <div className="site-footer-newsletter">
         <div className="newsletter-header">
-          <h3>ReactVault Newsletter</h3>
+          <h3>Pepe Jeans Newsletter</h3>
           <div className="newsletter-region">
             <span className="newsletter-region-label">India</span>
             <button type="button" className="newsletter-region-change">Change</button>
@@ -95,8 +95,10 @@ function Footer() {
         </div>
         <p>
           Have you signed up for our newsletter yet? Be the first to hear about
-          exclusive offers, new drops, and much more. Subscribe now!
+          exclusive offers, new drops, and much more. <br />
+          Subscribe now!
         </p>
+        
 
         <label className="newsletter-label" htmlFor="footer-newsletter-email">
           Please enter your email address:
@@ -146,7 +148,7 @@ function Footer() {
           </details>
         ))}
 
-        <p className="site-footer-copyright">© {new Date().getFullYear()} ReactVault</p>
+        <p className="site-footer-copyright">© <b>{new Date().getFullYear()}</b> PepeJeans</p>
       </div>
 
       {/* Scroll to top */}
