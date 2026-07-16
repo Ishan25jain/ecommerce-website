@@ -1,0 +1,22 @@
+/* ===================== ICON WEBFONT LOADING ===================== */
+/*
+  The header (Navbar) and footer both use Tabler icon-font glyphs (<i class="ti ti-...">)
+  loaded from an external CDN stylesheet in index.html. That CSS file loads fast, but the
+  actual .woff2 font file behind it downloads separately and can lag on slow connections
+  or a cold cache — showing empty/invisible icon boxes for a moment. This is what looked
+  like "header/footer showing while loading" the icons.
+
+  Fix: an inline script in index.html adds `icons-loading` to <html> immediately, and
+  removes it once document.fonts.ready resolves (icon font actually usable). While that
+  class is present, icons stay at opacity 0 instead of flashing as broken boxes; removing
+  the class lets them fade in smoothly instead of popping in.
+*/
+.ti {
+  display: inline-block;
+  opacity: 1;
+  transition: opacity 0.15s ease;
+}
+
+html.icons-loading .ti {
+  opacity: 0;
+}

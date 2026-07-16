@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { useCachedFetch } from '../hooks/useCachedFetch'
 import Loader from './Loader'
 
 
@@ -31,29 +31,11 @@ function ProductCard({ product }) {
 }
 
 function TrendingNow() {
-  const [products, setProducts] = useState([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
-
-  useEffect(() => {
-    fetch('https://dummyjson.com/products?limit=15')
-      .then((response) => {
-        if (response.ok) {
-          return response.json()
-        } else {
-          throw new Error('Failed to fetch products')
-        }
-      })
-      .then((data) => {
-        setProducts(data.products) // DummyJSON wraps the array inside a "products" key
-        setLoading(false)
-      })
-      .catch((err) => {
-        console.error('Fetch error:', err)
-        setError(err.message)
-        setLoading(false)
-      })
-  }, [])
+  const { data, loading, error } = useCachedFetch(
+    'trending-products-cache',
+    'https://dummyjson.com/products?limit=15'
+  )
+  const products = data?.products || []
 
     if (loading) return <Loader />
     if (error) return <p style={{ padding: '40px', color: 'red' }}>Error: {error}</p>

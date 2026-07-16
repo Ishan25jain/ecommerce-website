@@ -28,10 +28,8 @@ html {
 }
 
 body {
-  background: var(--bg-page);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background: white;
+  display: block;
   min-height: 100vh;
   font-family: 'Roboto', sans-serif;
   transition: background-color 0.25s ease;
@@ -41,38 +39,20 @@ body {
 
 #root {
   width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: var(--bg-page);
+  min-height: 100vh;
+  display: block;
+  background: white;
   transition: background-color 0.25s ease;
 }
 
-body:has(.shop-page),
-body:has(.account-page),
-body:has(.cart-page),
-body:has(.cart-empty),
-body:has(.product-detail-page) {
-  display: block;            
-  justify-content: unset;     
-  align-items: unset;          
-  background: white;
-  min-height: 100vh;
-  overflow-y: scroll;
-}
-
-#root:has(.shop-page),
-#root:has(.account-page),
-#root:has(.cart-page),
-#root:has(.cart-empty),
-#root:has(.product-detail-page) {
-  display: block;            
-  height: auto;
-  width: 100%;
-  background: white;
-}
-
+/* Login/Register are the ONLY pages rendered outside the shared <Layout /> (no
+   header/footer) — they use a distinct full-viewport centered split-screen look,
+   which is why they're the one deliberate exception below. Every other page
+   (shop, cart, account, category, search, wishlist, loading states, Todo/Watches,
+   and anything added later) gets full-width block layout automatically now —
+   no per-page class needs to be added here anymore. This replaces the old
+   allowlist approach, which silently broke CategoryProducts, SearchResults,
+   Wishlist, and the shared <Loader /> component because each was missing from it. */
 body:has(.auth-wrapper) {
   display: flex;
   justify-content: center;
@@ -95,6 +75,7 @@ body:has(.auth-wrapper) {
   border-radius: 12px;
   padding: 24px;
   width: 380px;
+  margin: 40px auto;
   transition: background-color 0.25s ease;
 }
 

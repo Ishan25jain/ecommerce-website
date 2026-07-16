@@ -1,10 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useCachedFetch } from '../hooks/useCachedFetch';
 import './CategorySection.css';
 
 function CategorySection() {
-  const [categories, setCategories] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [sliderPosition, setSliderPosition] = useState(0);
 
 const categoryImages = {
@@ -58,35 +57,18 @@ const categoryImages = {
 
     };
 
-  useEffect(() => {
-    fetchCategories();
-  }, []);
+  const { data: categories, loading } = useCachedFetch(
+    'categories-cache',
+    'https://dummyjson.com/products/categories'
+  );
 
-  async function fetchCategories() {
-    try {
-      setLoading(true);
-
-      const response = await fetch(
-        'https://dummyjson.com/products/categories'
-      );
-
-      const data = await response.json();
-
-      setCategories(data);
-    } catch (error) {
-      console.error(error);
-    } finally {
-      setLoading(false);
-    }
-  }
-
-  const visibleCategories = categories.slice(
+  const visibleCategories = (categories || []).slice(
     sliderPosition,
     sliderPosition + 5
   );
 
   function handleNextSlide() {
-    if (sliderPosition < categories.length - 5) {
+    if (sliderPosition < (categories?.length || 0) - 5) {
       setSliderPosition((prev) => prev + 5);
     }
   }
@@ -97,7 +79,7 @@ const categoryImages = {
     }
   }
 
-  if (loading) {
+  if (loading || !categories) {
     return (
       <p style={{ padding: '40px', textAlign: 'center' }}>
         Loading Categories...

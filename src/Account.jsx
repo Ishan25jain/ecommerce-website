@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { Outlet, NavLink, Link, useNavigate } from 'react-router-dom'
-import NavBar from './shop/Navbar'
 import './Account.css'
 
 function Account({ setIsLoggedIn }) {
@@ -24,9 +23,7 @@ function Account({ setIsLoggedIn }) {
   }
 
   return (
-    <>
-      <NavBar />
-      <div className="account-page">
+    <div className="account-page">
         <div className="account-breadcrumb">
           <Link to="/shop">Home</Link>  / <Link to="/account">My Account</Link>
         </div>
@@ -105,8 +102,7 @@ function Account({ setIsLoggedIn }) {
             <Outlet />
           </main>
         </div>
-      </div>
-    </>
+    </div>
   )
 }
 

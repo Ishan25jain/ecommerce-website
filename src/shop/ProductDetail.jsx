@@ -5,7 +5,6 @@ import { CartContext } from './context/CartContext'
 import { WishlistContext } from './context/WishlistContext'
 import { toast } from 'react-toastify'
 import Loader from './Loader'
-import NavBar from './Navbar'
 
 
 function ProductDetail() {
@@ -42,8 +41,6 @@ function ProductDetail() {
     )
 
   return (
-    <>
-    <NavBar />
     <div className="product-detail-page">
       <Link to="/shop" className="back-link">← Back to Shop</Link>
 
@@ -131,7 +128,6 @@ function ProductDetail() {
         </div>
       </div>
     </div>
-    </>
   )
 }
 

@@ -2,13 +2,32 @@
 <html lang="en">
   <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ecommerce Website</title>
+    <script>
+      // Hide Tabler icon glyphs (header + footer) until the icon webfont has
+      // actually finished loading, instead of letting them flash as empty
+      // boxes while the file downloads. Runs synchronously, before paint.
+      document.documentElement.classList.add('icons-loading');
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(function () {
+          document.documentElement.classList.remove('icons-loading');
+        });
+        // Safety net: never hide icons for more than 2s even if font
+        // detection fails for some reason (older browsers, blocked CDN, etc).
+        setTimeout(function () {
+          document.documentElement.classList.remove('icons-loading');
+        }, 2000);
+      } else {
+        document.documentElement.classList.remove('icons-loading');
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

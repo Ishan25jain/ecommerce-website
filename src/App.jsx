@@ -15,6 +15,7 @@ import TodoPage from './TodoPage';
 import WatchList from './watchList';
 import Register from './Register';
 import Login from './Login';
+import Layout from './shop/Layout';
 import Shop from './shop/Shop';
 import ProductDetail from './shop/ProductDetail';
 import Cart from './shop/Cart';
@@ -52,6 +53,12 @@ function App() {
           pauseOnHover
         />
         <Routes>
+          {/* Login/Register are the ONLY routes without header + footer */}
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
+
+          {/* Every route inside here shares one NavBar + Footer via Layout's <Outlet /> */}
+          <Route element={<Layout />}>
             <Route path="/" element={<Navigate to="/shop" replace />} />
             <Route
               path="/todo"
@@ -62,34 +69,32 @@ function App() {
                   <Navigate to="/login" />
                 )
               }
-            />  
-          <Route
-            path="/watches"
-            element={
-              isLoggedIn ? (
-                <WatchList theme={theme} toggleTheme={toggleTheme} />
-              ) : (
-                <Navigate to="/login" />
-              )
-            }
-          />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
-          <Route path="/shop" element={<Shop />} />
-          <Route path='/shop/wishlist' element={<Wishlist />} />
-          <Route path="/shop/product/:id" element={<ProductDetail />} />
-          <Route path="/shop/category/:categoryName" element={<CategoryProducts />} />
-          <Route path="/shop/search" element={<SearchResults />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/account" element={<Account setIsLoggedIn={setIsLoggedIn} />}>
-          
-            <Route index element={<AccountOverview />} />
-            <Route path="personal-details" element={<PersonalDetails />} />
-            <Route path="address-book" element={<AddressBook />} />
-            <Route path="order-history" element={<OrderHistory />} />
-            <Route path="wishlist" element={<Wishlist />} />
+            />
+            <Route
+              path="/watches"
+              element={
+                isLoggedIn ? (
+                  <WatchList theme={theme} toggleTheme={toggleTheme} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route path="/shop" element={<Shop />} />
+            <Route path='/shop/wishlist' element={<Wishlist />} />
+            <Route path="/shop/product/:id" element={<ProductDetail />} />
+            <Route path="/shop/category/:categoryName" element={<CategoryProducts />} />
+            <Route path="/shop/search" element={<SearchResults />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/account" element={<Account setIsLoggedIn={setIsLoggedIn} />}>
+              <Route index element={<AccountOverview />} />
+              <Route path="personal-details" element={<PersonalDetails />} />
+              <Route path="address-book" element={<AddressBook />} />
+              <Route path="order-history" element={<OrderHistory />} />
+              <Route path="wishlist" element={<Wishlist />} />
+            </Route>
+            <Route path="*" element={<h1 style={{ padding: '40px' }}>404 — Page not found</h1>} />
           </Route>
-          <Route path="*" element={<h1 style={{ padding: '40px' }}>404 — Page not found</h1>} />
         </Routes>
         </OrdersProvider>
       </WishlistProvider>
